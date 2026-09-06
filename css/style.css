@@ -370,6 +370,14 @@ h4{font-size:1rem;font-weight:600}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:none}
 
+/* Como Funciona — 4 etapas e texto de apoio (classes novas, adicionadas) */
+.process.process-4{grid-template-columns:repeat(4,1fr)}
+.process p{font-size:.85rem;color:var(--c-text);margin-top:8px;max-width:220px;margin-left:auto;margin-right:auto}
+
+/* Serviços — grid de 2 colunas e preço no card (classes novas, adicionadas) */
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card .card-price{margin-top:16px;font-weight:800;color:var(--c-blue);font-size:1.05rem}
+
 /* Responsive */
 @media (max-width:900px){
   .grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
@@ -382,6 +390,7 @@ h4{font-size:1rem;font-weight:600}
   .hero-content{max-width:none}
 }
 @media (max-width:720px){
+  .grid-2{grid-template-columns:1fr}
   .menu-toggle{display:flex}
   .nav{
     position:fixed;top:78px;left:0;right:0;
@@ -399,4 +408,12 @@ h4{font-size:1rem;font-weight:600}
   .footer-inner{grid-template-columns:1fr;gap:32px}
   .hero{min-height:auto;padding:130px 0 80px}
   .hero-cta .btn{width:100%}
+}
+
+/* Ajuste responsivo do novo .process-4 (adicionado, não altera as regras originais acima) */
+@media (max-width:900px){
+  .process.process-4{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:720px){
+  .process.process-4{grid-template-columns:1fr}
 }
