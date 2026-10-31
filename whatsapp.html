@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abrindo o WhatsApp | Nortis Analytics</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#FFFFFF" id="metaThemeColor" />
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<script>
+  // Aplica o tema antes da renderização para evitar o piscar
+  (function(){
+    var theme;
+    try { theme = localStorage.getItem('nortis-theme'); } catch (e) {}
+    if (theme !== 'dark' && theme !== 'light'){
+      theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('metaThemeColor').setAttribute('content', theme === 'dark' ? '#0B1E36' : '#FFFFFF');
+  })();
+</script>
+<link rel="stylesheet" href="/css/style.css" />
+<!-- ATIVAR: Cloudflare Web Analytics (trocar SEU_TOKEN e remover o comentário)
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "SEU_TOKEN"}'></script>
+-->
+</head>
+<body>
+
+<main class="redirect-page">
+  <div>
+    <a href="/" class="logo">
+      <img src="/assets/images/logo-mark.svg" alt="Nortis Analytics" class="logo-img illus-light" />
+      <img src="/assets/images/logo-mark-dark.svg" alt="" aria-hidden="true" class="logo-img illus-dark" />
+      <span class="logo-text"><strong>NORTIS</strong> ANALYTICS</span>
+    </a>
+    <h1>Abrindo o WhatsApp...</h1>
+    <p id="waManual" hidden><a href="https://wa.me/5531920066820?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20inicial%20com%20a%20Nortis%20Analytics." id="waLink">Se não abrir, clique aqui</a></p>
+    <noscript>
+      <p><a href="https://wa.me/5531920066820?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20conversa%20inicial%20com%20a%20Nortis%20Analytics.">Se não abrir, clique aqui</a></p>
+    </noscript>
+  </div>
+</main>
+
+<script>
+  // O atraso dá tempo para a medição de visitas registrar a página
+  document.getElementById('waManual').hidden = false;
+  setTimeout(function(){
+    window.location.replace(document.getElementById('waLink').href);
+  }, 600);
+</script>
+</body>
+</html>
