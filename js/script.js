@@ -1,4 +1,4 @@
-// Nortis Analytics — main script
+// Nortis Analytics: main script
 (function(){
   'use strict';
 
@@ -49,23 +49,6 @@
     });
   }
 
-  // Reveal-on-scroll
-  var targets = document.querySelectorAll('.section, .hero-content, .cta-final .container');
-  targets.forEach(function(el){ el.classList.add('reveal'); });
-  if ('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting){
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold:0.12 });
-    targets.forEach(function(el){ io.observe(el); });
-  } else {
-    targets.forEach(function(el){ el.classList.add('visible'); });
-  }
-
   // FAQ single-open behavior
   var faqItems = document.querySelectorAll('.faq details');
   faqItems.forEach(function(item){
@@ -77,6 +60,4 @@
       }
     });
   });
-
-  // Current year (if needed later)
 })();
