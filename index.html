@@ -113,133 +113,234 @@
       <img src="assets/images/logo-mark-dark.svg" alt="" aria-hidden="true" class="logo-img illus-dark" />
       <span class="logo-text"><strong>NORTIS</strong> ANALYTICS</span>
     </a>
-    <nav class="nav" id="nav">
-      <a href="#servicos">Serviços</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#para-quem">Para quem é</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#faq">Perguntas frequentes</a>
-      <a href="whatsapp.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Conversar no WhatsApp</a>
-    </nav>
     <div class="header-actions">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar tema escuro" aria-pressed="false">
         <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="whatsapp.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><span class="label-long">Conversar no WhatsApp</span><span class="label-short">WhatsApp</span></a>
     </div>
   </div>
 </header>
 
-<main id="top">
+<main id="top" class="home">
 
   <!-- TOPO -->
-  <section class="hero">
-    <div class="container">
+  <section class="hero sec-base">
+    <div class="container hero-grid">
       <div class="hero-content">
         <p class="eyebrow">Nortis Analytics</p>
-        <h1>Tecnologia que trabalha <span class="accent">pelo seu negócio.</span></h1>
+        <h1>
+          <span class="visually-hidden">Tecnologia que trabalha pelo seu negócio.</span>
+          <span class="hero-title" aria-hidden="true"><span class="rotator" id="heroRotator"><span class="rotator-item is-active">Um atendimento</span><span class="rotator-item">Um site</span><span class="rotator-item">Um aplicativo</span><span class="rotator-item">Uma IA</span></span> que trabalha pelo seu negócio.</span>
+        </h1>
         <p class="hero-text">Sites, aplicativos, inteligência artificial e chatbots para pequenas e médias empresas. Seu cliente encontra você no Google, pode ser atendido a qualquer hora e sua equipe para de repetir tarefa manual.</p>
         <div class="hero-cta">
           <a href="whatsapp.html" target="_blank" rel="noopener" class="btn btn-primary">Conversar no WhatsApp</a>
           <a href="#servicos" class="btn btn-outline">Ver serviços</a>
         </div>
       </div>
+
+      <!-- Carrossel de demonstrações. Os slides já vêm no estado final; o script anima passo a passo.
+           data-from / data-until: etapa em que o elemento aparece / some. data-mark: etapa em que recebe destaque.
+           data-type: etapa em que o texto é digitado. data-times: espera (ms) depois de cada etapa. -->
+      <div class="demo-carousel" id="demoCarousel" role="region" aria-roledescription="carrossel" aria-label="Exemplos de como funciona">
+        <div class="demo-frame">
+
+          <div class="demo-slide is-current" role="group" aria-roledescription="slide" aria-label="1 de 4: Atendimento" data-name="Atendimento" data-caption="Exemplo de como funciona um atendimento automático." data-times="500,800,1300,1500,900,1300">
+            <div class="demo-head"><span class="chat-dot" aria-hidden="true"></span><span class="demo-title">Atendimento automático</span><span class="chat-status">online</span></div>
+            <div class="demo-body chat-body">
+              <div class="msg msg-client" data-from="1"><p>Oi, vocês têm horário amanhã?</p><span class="msg-time">23:12</span></div>
+              <div class="typing" data-from="2" data-until="2" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="msg msg-bot" data-from="3"><p>Temos às 9h, 14h e 16h. Qual fica melhor para você?</p></div>
+              <div class="msg msg-client" data-from="4"><p>14h</p></div>
+              <div class="typing" data-from="5" data-until="5" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="msg msg-bot" data-from="6"><p>Agendado para amanhã às 14h. Você recebe um lembrete 1 hora antes.</p></div>
+            </div>
+          </div>
+
+          <div class="demo-slide" role="group" aria-roledescription="slide" aria-label="2 de 4: Site" data-name="Site" data-caption="Exemplo de como funciona um site com contato direto." data-times="500,1800,1100,700,1200,700">
+            <div class="demo-head"><span class="win-dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="demo-title">Navegador</span></div>
+            <div class="demo-body site-body">
+              <div class="site-search"><span class="site-search-text" data-type="1">dentista perto de mim</span><span class="caret" aria-hidden="true"></span></div>
+              <div class="site-result is-marked" data-from="2" data-until="3" data-mark="3"><strong>Clínica Exemplo | Agende pelo WhatsApp</strong><span>clinicaexemplo.com.br</span></div>
+              <div class="site-page" data-from="4">
+                <p class="site-page-name">Clínica Exemplo</p>
+                <span class="site-cta is-marked" data-mark="5">Agendar pelo WhatsApp</span>
+              </div>
+              <div class="site-toast" data-from="6">Novo contato pelo site</div>
+            </div>
+          </div>
+
+          <div class="demo-slide" role="group" aria-roledescription="slide" aria-label="3 de 4: Aplicativo" data-name="Aplicativo" data-caption="Exemplo de como funciona um aplicativo de agendamento." data-times="1200,1700,1700,1700">
+            <div class="demo-head"><span class="chat-dot" aria-hidden="true"></span><span class="demo-title">Agenda de hoje</span></div>
+            <div class="demo-body app-body">
+              <div class="slot is-marked" data-mark="1"><span class="slot-time">09:00</span><span class="slot-cell"><span class="slot-free">Livre</span><span class="slot-busy">Ocupado</span></span></div>
+              <div class="slot is-marked" data-mark="2"><span class="slot-time">10:30</span><span class="slot-cell"><span class="slot-free">Livre</span><span class="slot-busy">Ocupado</span></span></div>
+              <div class="slot slot-new is-marked" data-mark="4"><span class="slot-time">14:00</span><span class="slot-cell"><span class="slot-free">Livre</span><span class="slot-busy">Novo agendamento</span></span></div>
+              <div class="slot is-marked" data-mark="3"><span class="slot-time">16:00</span><span class="slot-cell"><span class="slot-free">Livre</span><span class="slot-busy">Ocupado</span></span></div>
+            </div>
+          </div>
+
+          <div class="demo-slide" role="group" aria-roledescription="slide" aria-label="4 de 4: IA" data-name="IA" data-caption="Exemplo de como funciona uma IA que organiza pedidos." data-times="600,1300,1900,800,800,800">
+            <div class="demo-head"><span class="chat-dot" aria-hidden="true"></span><span class="demo-title">Pedido recebido</span></div>
+            <div class="demo-body ia-body">
+              <div class="ia-in">
+                <div class="msg msg-client" data-from="1"><p>Preciso de 20 sacos de cimento, 5 metros de areia e 2 caixas de piso 60x60</p></div>
+                <div class="typing" data-from="2" data-until="2" aria-hidden="true"><span></span><span></span><span></span></div>
+              </div>
+              <div class="ia-out">
+                <p class="ia-out-title">Pedido organizado</p>
+                <ul class="ia-items">
+                  <li data-from="3"><span>Cimento</span><strong>20 sacos</strong></li>
+                  <li data-from="4"><span>Areia</span><strong>5 m³</strong></li>
+                  <li data-from="5"><span>Piso 60x60</span><strong>2 caixas</strong></li>
+                </ul>
+                <span class="ia-badge" data-from="6">Orçamento pronto para enviar</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <p class="demo-caption" id="demoCaption">Exemplo de como funciona um atendimento automático.</p>
+        <div class="demo-controls">
+          <button type="button" class="demo-arrow" id="demoPrev" aria-label="Exemplo anterior"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M10 3L5 8L10 13"/></svg></button>
+          <div class="demo-dots">
+            <button type="button" class="demo-dot" aria-label="Atendimento" aria-current="true"></button>
+            <button type="button" class="demo-dot" aria-label="Site"></button>
+            <button type="button" class="demo-dot" aria-label="Aplicativo"></button>
+            <button type="button" class="demo-dot" aria-label="IA"></button>
+          </div>
+          <button type="button" class="demo-arrow" id="demoNext" aria-label="Próximo exemplo"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M6 3L11 8L6 13"/></svg></button>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- BARRA DE SEÇÕES -->
+  <nav class="section-nav" id="sectionNav" aria-label="Seções da página">
+    <div class="section-nav-track" id="sectionNavTrack">
+      <span class="section-nav-indicator" aria-hidden="true"></span>
+      <a href="#servicos" data-nav="servicos" data-label="Serviços">Serviços</a>
+      <a href="#como-funciona" data-nav="como-funciona" data-label="Como funciona">Como funciona</a>
+      <a href="#para-quem" data-nav="para-quem" data-label="Para quem é">Para quem é</a>
+      <a href="#sobre" data-nav="sobre" data-label="Sobre">Sobre</a>
+      <a href="#faq" data-nav="faq" data-label="Perguntas frequentes">Perguntas frequentes</a>
+    </div>
+  </nav>
+
   <!-- DOR -->
-  <section class="section" id="dor">
+  <section class="section sec-alt" id="dor" data-nav-group="">
     <div class="container">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <p class="eyebrow">O dia a dia</p>
         <h2>Isso acontece no seu negócio?</h2>
       </header>
-      <ul class="pain-list">
-        <li>O cliente manda mensagem às 23h e compra de quem respondeu primeiro.</li>
-        <li>Alguém procura o seu serviço na cidade e encontra o concorrente no Google.</li>
-        <li>Sua equipe responde as mesmas perguntas dezenas de vezes por semana.</li>
-        <li>Orçamentos que levam uma hora para montar, um por um.</li>
-        <li>Agenda, pedidos e controles espalhados entre caderno, planilha e WhatsApp.</li>
-        <li>Você depende só de indicação e do Instagram para conseguir cliente novo.</li>
-      </ul>
-      <p class="pain-footer">Dá para resolver, sem você precisar entender de tecnologia.</p>
+      <div class="pain-path" id="painPath">
+        <svg class="pain-line" aria-hidden="true"><path class="pain-line-track" d=""></path><path class="pain-line-fill" d=""></path></svg>
+        <ol class="pain-list">
+          <li class="pain-item"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#dor-mensagem"></use></svg></span><p>O cliente manda mensagem às 23h e compra de quem respondeu primeiro.</p></li>
+          <li class="pain-item"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#dor-busca"></use></svg></span><p>Alguém procura o seu serviço na cidade e encontra o concorrente no Google.</p></li>
+          <li class="pain-item"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#dor-perguntas"></use></svg></span><p>Sua equipe responde as mesmas perguntas dezenas de vezes por semana.</p></li>
+          <li class="pain-item"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#dor-orcamento"></use></svg></span><p>Orçamentos que levam uma hora para montar, um por um.</p></li>
+          <li class="pain-item"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#dor-papel"></use></svg></span><p>Agenda, pedidos e controles espalhados entre caderno, planilha e WhatsApp.</p></li>
+          <li class="pain-item"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#dor-indicacao"></use></svg></span><p>Você depende só de indicação e do Instagram para conseguir cliente novo.</p></li>
+        </ol>
+        <div class="pain-end">
+          <p class="pain-footer">Dá para resolver, sem você precisar entender de tecnologia.</p>
+          <a href="whatsapp.html" target="_blank" rel="noopener" class="btn btn-primary">Conversar no WhatsApp</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section class="section" id="servicos">
+  <section class="section sec-base" id="servicos" data-nav-group="servicos">
     <div class="container">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <p class="eyebrow">Serviços</p>
         <h2>Quatro formas de colocar a tecnologia para trabalhar</h2>
         <p class="section-sub">Você pode começar por qualquer uma delas e combinar as outras quando fizer sentido.</p>
       </header>
-      <ol class="service-list">
-        <li>
-          <div class="service-title"><span class="big-num">01</span><h3>Sites</h3></div>
-          <div class="service-body">
-            <p class="service-problem">Para quem não é encontrado no Google ou tem um site que não gera contato.</p>
-            <p>Exemplos: página de vendas, site institucional e loja virtual.</p>
-            <p>Funcionam bem no celular, têm botão de WhatsApp e vêm configurados para aparecer no Google.</p>
+      <div class="services" id="services">
+        <div class="service-tabs" role="tablist" aria-label="Serviços">
+          <button type="button" class="service-tab" role="tab" id="tab-sites" aria-controls="panel-sites" aria-selected="true"><span class="tab-num">01</span><span class="tab-name">Sites</span><span class="tab-short" aria-hidden="true">Sites</span></button>
+          <button type="button" class="service-tab" role="tab" id="tab-apps" aria-controls="panel-apps" aria-selected="false" tabindex="-1"><span class="tab-num">02</span><span class="tab-name">Aplicativos sob medida</span><span class="tab-short" aria-hidden="true">Aplicativos</span></button>
+          <button type="button" class="service-tab" role="tab" id="tab-ia" aria-controls="panel-ia" aria-selected="false" tabindex="-1"><span class="tab-num">03</span><span class="tab-name">Integrações com IA</span><span class="tab-short" aria-hidden="true">IA</span></button>
+          <button type="button" class="service-tab" role="tab" id="tab-chatbot" aria-controls="panel-chatbot" aria-selected="false" tabindex="-1"><span class="tab-num">04</span><span class="tab-name">Chatbots de atendimento</span><span class="tab-short" aria-hidden="true">Chatbots</span></button>
+        </div>
+        <div class="service-panels">
+          <div class="service-panel" role="tabpanel" id="panel-sites" aria-labelledby="tab-sites" tabindex="0">
+            <div class="service-text">
+              <span class="big-num">01</span>
+              <h3>Sites</h3>
+              <p class="service-problem">Para quem não é encontrado no Google ou tem um site que não gera contato.</p>
+              <p>Exemplos: página de vendas, site institucional e loja virtual.</p>
+              <p>Funcionam bem no celular, têm botão de WhatsApp e vêm configurados para aparecer no Google.</p>
+            </div>
+            <svg class="service-illus" viewBox="0 0 240 180" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#srv-sites"></use></svg>
           </div>
-        </li>
-        <li>
-          <div class="service-title"><span class="big-num">02</span><h3>Aplicativos sob medida</h3></div>
-          <div class="service-body">
-            <p class="service-problem">Para o que hoje roda em papel, planilha ou mensagem perdida no WhatsApp.</p>
-            <p>Exemplos: agendamento, pedidos e orçamentos, área do cliente e sistemas internos para a equipe.</p>
-            <p>Funcionam direto no celular e no computador, sem precisar baixar.</p>
+          <div class="service-panel" role="tabpanel" id="panel-apps" aria-labelledby="tab-apps" tabindex="0">
+            <div class="service-text">
+              <span class="big-num">02</span>
+              <h3>Aplicativos sob medida</h3>
+              <p class="service-problem">Para o que hoje roda em papel, planilha ou mensagem perdida no WhatsApp.</p>
+              <p>Exemplos: agendamento, pedidos e orçamentos, área do cliente e sistemas internos para a equipe.</p>
+              <p>Funcionam direto no celular e no computador, sem precisar baixar.</p>
+            </div>
+            <svg class="service-illus" viewBox="0 0 240 180" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#srv-apps"></use></svg>
           </div>
-        </li>
-        <li>
-          <div class="service-title"><span class="big-num">03</span><h3>Integrações com IA</h3></div>
-          <div class="service-body">
-            <p class="service-problem">Para tirar o trabalho repetitivo das mãos da equipe.</p>
-            <p>Exemplos: orçamentos e respostas padrão, organização de documentos e e-mails, e sistemas conectados para a informação passar sozinha.</p>
-            <p>A decisão continua com uma pessoa da sua empresa.</p>
+          <div class="service-panel" role="tabpanel" id="panel-ia" aria-labelledby="tab-ia" tabindex="0">
+            <div class="service-text">
+              <span class="big-num">03</span>
+              <h3>Integrações com IA</h3>
+              <p class="service-problem">Para tirar o trabalho repetitivo das mãos da equipe.</p>
+              <p>Exemplos: orçamentos e respostas padrão, organização de documentos e e-mails, e sistemas conectados para a informação passar sozinha.</p>
+              <p>A decisão continua com uma pessoa da sua empresa.</p>
+            </div>
+            <svg class="service-illus" viewBox="0 0 240 180" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#srv-ia"></use></svg>
           </div>
-        </li>
-        <li>
-          <div class="service-title"><span class="big-num">04</span><h3>Chatbots de atendimento</h3></div>
-          <div class="service-body">
-            <p class="service-problem">Atendimento automático que entende o que o cliente escreve, no WhatsApp, no site e no Instagram.</p>
-            <p>Exemplos: dúvidas frequentes 24 horas, agendamento e triagem antes do atendente.</p>
-            <p>Quando o cliente precisa de uma pessoa, a conversa passa para você ou sua equipe.</p>
+          <div class="service-panel" role="tabpanel" id="panel-chatbot" aria-labelledby="tab-chatbot" tabindex="0">
+            <div class="service-text">
+              <span class="big-num">04</span>
+              <h3>Chatbots de atendimento</h3>
+              <p class="service-problem">Atendimento automático que entende o que o cliente escreve, no WhatsApp, no site e no Instagram.</p>
+              <p>Exemplos: dúvidas frequentes 24 horas, agendamento e triagem antes do atendente.</p>
+              <p>Quando o cliente precisa de uma pessoa, a conversa passa para você ou sua equipe.</p>
+            </div>
+            <svg class="service-illus" viewBox="0 0 240 180" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#srv-chatbot"></use></svg>
           </div>
-        </li>
-      </ol>
-      <p class="service-footnote">Toda solução pode ter acompanhamento mensal: manutenção, ajustes e um relatório com os números do que ela está trazendo.</p>
+        </div>
+      </div>
+      <p class="service-footnote" data-reveal>Toda solução pode ter acompanhamento mensal: manutenção, ajustes e um relatório com os números do que ela está trazendo.</p>
     </div>
   </section>
 
   <!-- COMO FUNCIONA -->
-  <section class="section" id="como-funciona">
+  <section class="section sec-alt" id="como-funciona" data-nav-group="como-funciona">
     <div class="container">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <p class="eyebrow">Como funciona</p>
         <h2>Do primeiro contato ao acompanhamento</h2>
       </header>
-      <ol class="process">
-        <li><span class="big-num">01</span><h3>Conversa inicial</h3><p>Gratuita, 30 minutos. Entendemos o seu negócio e o que precisa ser resolvido.</p></li>
-        <li><span class="big-num">02</span><h3>Proposta</h3><p>Em até 2 dias úteis, com solução, prazo e investimento claros.</p></li>
-        <li><span class="big-num">03</span><h3>Construção</h3><p>Você aprova cada etapa.</p></li>
-        <li><span class="big-num">04</span><h3>Entrega</h3><p>Tudo no ar, funcionando e em seu nome.</p></li>
-        <li><span class="big-num">05</span><h3>Acompanhamento</h3><p>Manutenção, ajustes e relatório mensal.</p></li>
+      <ol class="process" id="process">
+        <li><span class="step-box">01</span><div><h3>Conversa inicial</h3><p>Gratuita, 30 minutos. Entendemos o seu negócio e o que precisa ser resolvido.</p></div></li>
+        <li><span class="step-box">02</span><div><h3>Proposta</h3><p>Em até 2 dias úteis, com solução, prazo e investimento claros.</p></div></li>
+        <li><span class="step-box">03</span><div><h3>Construção</h3><p>Você aprova cada etapa.</p></div></li>
+        <li><span class="step-box">04</span><div><h3>Entrega</h3><p>Tudo no ar, funcionando e em seu nome.</p></div></li>
+        <li><span class="step-box">05</span><div><h3>Acompanhamento</h3><p>Manutenção, ajustes e relatório mensal.</p></div></li>
       </ol>
     </div>
   </section>
 
   <!-- DIFERENCIAL -->
-  <section class="section" id="diferencial">
+  <section class="section sec-base" id="diferencial" data-nav-group="como-funciona">
     <div class="container">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <p class="eyebrow">Diferencial</p>
         <h2>Por que a Nortis</h2>
       </header>
-      <ul class="line-list">
+      <ul class="line-list" data-reveal-list>
         <li><h3>Tudo em um só lugar</h3><p>Site, aplicativo, chatbot e automação com inteligência artificial com um único responsável. Você não precisa contratar quatro fornecedores.</p></li>
         <li><h3>Contato direto com quem constrói</h3><p>Você fala direto com o Ítalo, fundador e responsável técnico, sem atendente nem intermediário.</p></li>
         <li><h3>Preço de pequena empresa, entrega profissional</h3><p>Valores pensados para a realidade da pequena e média empresa, com contrato, prazo e suporte.</p></li>
@@ -247,58 +348,58 @@
         <li><h3>Acompanhamento depois da entrega</h3><p>Planos mensais para manter, ajustar e melhorar a solução. A Nortis não entrega e some.</p></li>
         <li><h3>Linguagem simples</h3><p>A tecnologia é explicada pelo que muda no seu negócio, sem termos técnicos.</p></li>
       </ul>
-      <p class="diff-statement">Mais completo que um criador de site, mais confiável que um freelancer barato e mais acessível que uma agência.</p>
+      <p class="diff-statement" data-reveal>Mais completo que um criador de site, mais confiável que um freelancer barato e mais acessível que uma agência.</p>
     </div>
   </section>
 
   <!-- PARA QUEM É -->
-  <section class="section section-band" id="para-quem">
+  <section class="section section-band" id="para-quem" data-nav-group="para-quem">
     <div class="container">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <p class="eyebrow">Para quem é</p>
         <h2>Para o negócio que quer a tecnologia trabalhando a favor</h2>
       </header>
-      <ul class="line-list">
-        <li><h3>Clínicas, consultórios e dentistas</h3><p>Agendamento automático pelo WhatsApp e site para ser encontrado.</p></li>
-        <li><h3>Salões, barbearias e estúdios</h3><p>Agenda de horários sem atendimento manual.</p></li>
-        <li><h3>Advocacia e contabilidade</h3><p>Site para aparecer no Google e triagem automática de contatos.</p></li>
-        <li><h3>Imobiliárias e corretores</h3><p>Catálogo de imóveis e respostas automáticas às perguntas repetidas.</p></li>
-        <li><h3>Restaurantes, padarias e lanchonetes</h3><p>Cardápio digital e pedidos organizados pelo WhatsApp.</p></li>
-        <li><h3>Comércio e varejo</h3><p>Site ou loja virtual para vender além da loja física.</p></li>
-        <li><h3>Autopeças e materiais de construção</h3><p>Orçamentos montados com inteligência artificial e catálogo online.</p></li>
-        <li><h3>Distribuidoras</h3><p>Aplicativo de pedidos para representantes e área do cliente.</p></li>
-        <li><h3>Prestadores de serviço</h3><p>Página de vendas com botão de WhatsApp, para não depender só de indicação.</p></li>
-        <li><h3>Academias, escolas e cursos</h3><p>Matrícula pelo chatbot e área do aluno.</p></li>
+      <ul class="segment-list" data-reveal-list>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-clinica"></use></svg><div><h3>Clínicas, consultórios e dentistas</h3><p>Agendamento automático pelo WhatsApp e site para ser encontrado.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-salao"></use></svg><div><h3>Salões, barbearias e estúdios</h3><p>Agenda de horários sem atendimento manual.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-advocacia"></use></svg><div><h3>Advocacia e contabilidade</h3><p>Site para aparecer no Google e triagem automática de contatos.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-imobiliaria"></use></svg><div><h3>Imobiliárias e corretores</h3><p>Catálogo de imóveis e respostas automáticas às perguntas repetidas.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-restaurante"></use></svg><div><h3>Restaurantes, padarias e lanchonetes</h3><p>Cardápio digital e pedidos organizados pelo WhatsApp.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-varejo"></use></svg><div><h3>Comércio e varejo</h3><p>Site ou loja virtual para vender além da loja física.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-autopecas"></use></svg><div><h3>Autopeças e materiais de construção</h3><p>Orçamentos montados com inteligência artificial e catálogo online.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-distribuidora"></use></svg><div><h3>Distribuidoras</h3><p>Aplicativo de pedidos para representantes e área do cliente.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-servicos"></use></svg><div><h3>Prestadores de serviço</h3><p>Página de vendas com botão de WhatsApp, para não depender só de indicação.</p></div></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-educacao"></use></svg><div><h3>Academias, escolas e cursos</h3><p>Matrícula pelo chatbot e área do aluno.</p></div></li>
       </ul>
-      <p class="segments-text">Atendemos qualquer negócio que precise de uma solução digital. Se o seu segmento não está aqui, a conversa é a mesma.</p>
+      <p class="segments-text" data-reveal>Atendemos qualquer negócio que precise de uma solução digital. Se o seu segmento não está aqui, a conversa é a mesma.</p>
     </div>
   </section>
 
   <!-- EXEMPLOS DE USO -->
-  <section class="section" id="exemplos">
+  <section class="section sec-base" id="exemplos" data-nav-group="para-quem">
     <div class="container">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <p class="eyebrow">Exemplos de uso</p>
         <h2>O que muda no dia a dia</h2>
       </header>
-      <ul class="example-list">
-        <li><strong>Clínica</strong><span>O paciente agenda sozinho pelo WhatsApp, a qualquer hora.</span></li>
-        <li><strong>Comércio</strong><span>O cliente encontra sua loja no Google e chama direto no WhatsApp.</span></li>
-        <li><strong>Autopeças</strong><span>O orçamento que levava uma hora fica pronto em minutos.</span></li>
-        <li><strong>Distribuidora</strong><span>O representante faz o pedido no celular, sem papel.</span></li>
+      <ul class="example-list" data-reveal-list>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-clinica"></use></svg><strong>Clínica</strong><span>O paciente agenda sozinho pelo WhatsApp, a qualquer hora.</span></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-varejo"></use></svg><strong>Comércio</strong><span>O cliente encontra sua loja no Google e chama direto no WhatsApp.</span></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-autopecas"></use></svg><strong>Autopeças</strong><span>O orçamento que levava uma hora fica pronto em minutos.</span></li>
+        <li><svg class="icon icon-40" aria-hidden="true"><use href="assets/icons/nortis-icons.svg#seg-distribuidora"></use></svg><strong>Distribuidora</strong><span>O representante faz o pedido no celular, sem papel.</span></li>
       </ul>
-      <p class="examples-note">Exemplos de como a solução funciona. Não são casos de clientes.</p>
+      <p class="examples-note" data-reveal>Exemplos de como a solução funciona. Não são casos de clientes.</p>
     </div>
   </section>
 
   <!-- TRABALHO REALIZADO -->
-  <section class="section" id="trabalho">
+  <section class="section sec-alt" id="trabalho" data-nav-group="para-quem">
     <div class="container">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <p class="eyebrow">Trabalho realizado</p>
         <h2>Trabalho realizado</h2>
       </header>
-      <p class="work-text">Site para uma casa de temporada. A proprietária queria receber reservas sem depender de plataforma que cobra comissão. Criamos um site próprio com fotos do espaço, informações da casa e botão direto para o WhatsApp.</p>
+      <p class="work-text" data-reveal>Site para uma casa de temporada. A proprietária queria receber reservas sem depender de plataforma que cobra comissão. Criamos um site próprio com fotos do espaço, informações da casa e botão direto para o WhatsApp.</p>
       <!-- ATIVAR IMAGENS: quando as duas imagens reais do site entregue estiverem em assets/images/, remova este comentário.
       <div class="work-images">
         <img src="assets/images/trabalho-casa-desktop.jpg" alt="Site da casa de temporada visto no computador" width="1600" height="1000" loading="lazy" />
@@ -309,17 +410,17 @@
   </section>
 
   <!-- SOBRE -->
-  <section class="section" id="sobre">
+  <section class="section sec-base" id="sobre" data-nav-group="sobre">
     <div class="container about-grid">
-      <div class="about-visual">
+      <div class="about-visual" data-reveal>
         <!-- ATIVAR FOTO: quando assets/images/italo.jpg (800x1000, 4:5, até 300 KB) estiver no projeto,
              remova o comentário da linha abaixo e apague as duas <img> da ilustração.
         <img src="assets/images/italo.jpg" alt="Ítalo, fundador da Nortis Analytics" width="800" height="1000" loading="lazy" class="about-photo" />
         -->
-        <img src="assets/images/about-illustration.svg" alt="Ilustração de uma pessoa trabalhando no computador ao lado de um balão de conversa" class="illus illus-light" loading="lazy" />
-        <img src="assets/images/about-illustration-dark.svg" alt="" aria-hidden="true" class="illus illus-dark" loading="lazy" />
+        <img src="assets/images/about-illustration.svg" alt="Ilustração de uma pessoa trabalhando no computador ao lado de um balão de conversa" class="illus-light" loading="lazy" />
+        <img src="assets/images/about-illustration-dark.svg" alt="" aria-hidden="true" class="illus-dark" loading="lazy" />
       </div>
-      <div class="about-content">
+      <div class="about-content" data-reveal>
         <p class="eyebrow">Sobre</p>
         <h2>Sobre a Nortis Analytics</h2>
         <p>A Nortis Analytics é uma empresa de tecnologia criada pelo Ítalo para colocar soluções digitais de qualidade ao alcance da pequena e média empresa. Você fala direto com quem constrói, do primeiro contato ao acompanhamento.</p>
@@ -330,13 +431,13 @@
   </section>
 
   <!-- PERGUNTAS FREQUENTES -->
-  <section class="section" id="faq">
+  <section class="section sec-alt" id="faq" data-nav-group="faq">
     <div class="container faq-container">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <p class="eyebrow">Perguntas frequentes</p>
         <h2>Perguntas frequentes</h2>
       </header>
-      <div class="faq">
+      <div class="faq" data-reveal-list>
         <details><summary>Preciso entender de tecnologia?</summary><p>Não. Você participa da conversa inicial e aprova cada etapa. O resto fica com a gente, e explicamos tudo sem termos técnicos.</p></details>
         <details><summary>Já tenho Instagram. Preciso de site?</summary><p>O Instagram é ótimo para relacionamento, mas quem procura o seu serviço no Google não encontra o seu perfil. E o perfil não é seu: uma mudança na plataforma ou uma conta bloqueada pode levar tudo embora. O site é um endereço que é seu e trabalha junto com o Instagram.</p></details>
         <details><summary>Dá para montar um site de graça em plataformas prontas. Por que contratar?</summary><p>Dá, e para algumas empresas isso basta. A questão é o seu tempo: montar, escrever, configurar para aparecer no Google e manter atualizado. Nós entregamos pronto, pensado para trazer cliente, e cuidamos da manutenção. Você continua focado no negócio.</p></details>
@@ -352,8 +453,8 @@
   </section>
 
   <!-- CHAMADA FINAL -->
-  <section class="cta-final" id="contato">
-    <div class="container">
+  <section class="cta-final sec-base" id="contato" data-nav-group="faq">
+    <div class="container" data-reveal>
       <h2>Vamos ver o que a tecnologia pode fazer pelo seu negócio?</h2>
       <p>Conversa inicial gratuita de 30 minutos. Você explica como funciona hoje e nós mostramos o que dá para resolver.</p>
       <a href="whatsapp.html" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Agendar conversa inicial</a>
@@ -396,9 +497,22 @@
   </div>
 </footer>
 
-<a href="whatsapp.html" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Conversar no WhatsApp">
-  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.12 1.6 5.92L0 24l6.4-1.68a11.8 11.8 0 0 0 5.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.17-1.24-6.14-3.37-8.44ZM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.8 1 1.01-3.7-.22-.38a9.45 9.45 0 0 1-1.45-5.02c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.3 9.62Zm5.43-7.1c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.34Z"/></svg>
-</a>
+<!-- BOTÃO DO WHATSAPP E BALÃO DE CONTATO -->
+<div class="contact-float" id="contactFloat">
+  <div class="contact-bubble-wrap" id="contactBubble">
+    <a href="whatsapp.html" target="_blank" rel="noopener" class="contact-bubble" aria-label="Fale conosco pelo WhatsApp">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.12 1.6 5.92L0 24l6.4-1.68a11.8 11.8 0 0 0 5.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.17-1.24-6.14-3.37-8.44ZM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.8 1 1.01-3.7-.22-.38a9.45 9.45 0 0 1-1.45-5.02c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.3 9.62Zm5.43-7.1c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.34Z"/></svg>
+      <span class="contact-text contact-text-normal"><strong>Fale conosco</strong><span class="contact-sub">Clique aqui para conversar com a gente no WhatsApp.</span></span>
+      <span class="contact-text contact-text-hover"><strong>Converse conosco agora</strong><span class="contact-sub">Clique para abrir o WhatsApp.</span></span>
+    </a>
+    <button type="button" class="contact-close" id="contactClose" aria-label="Fechar mensagem">
+      <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 2L10 10M10 2L2 10"/></svg>
+    </button>
+  </div>
+  <a href="whatsapp.html" target="_blank" rel="noopener" class="whatsapp-float" id="whatsappFloat" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.12 1.6 5.92L0 24l6.4-1.68a11.8 11.8 0 0 0 5.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.17-1.24-6.14-3.37-8.44ZM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.8 1 1.01-3.7-.22-.38a9.45 9.45 0 0 1-1.45-5.02c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.3 9.62Zm5.43-7.1c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.34Z"/></svg>
+  </a>
+</div>
 
 <script src="js/script.js"></script>
 </body>
