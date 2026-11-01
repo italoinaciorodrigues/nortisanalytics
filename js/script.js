@@ -480,12 +480,71 @@
     }
   }
 
-  // Botão do WhatsApp (sempre visível) e balão de contato
+  // Botão do WhatsApp (sempre visível) e mensagem de contato
   var bubble = document.getElementById('contactBubble');
-  if (bubble){
+  var waPill = document.getElementById('waPill');
+  var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var dismissed = false;
+  try { dismissed = sessionStorage.getItem('nortis-contact-collapsed') === '1'; } catch (e) {}
+
+  if (waPill && finePointer){
+    // Computador: botão e mensagem numa peça só. is-open = expandida; is-hover = texto de chamada.
+    var pillText = waPill.querySelector('.wa-pill-text');
+    var pillIcon = waPill.querySelector('.wa-pill-icon');
+    var pillLink = waPill.querySelector('.wa-pill-link');
+    var pillLeaveTimer = null;
+    var fitPill = function(){
+      var hover = waPill.classList.contains('is-hover');
+      if (!hover && !waPill.classList.contains('is-open')){
+        pillText.style.width = '';
+        return;
+      }
+      var label = waPill.querySelector(hover ? '.wa-pill-label.is-hover' : '.wa-pill-label.is-normal');
+      pillText.style.width = label.offsetWidth + 'px';
+    };
+    var setPill = function(name, on){
+      waPill.classList.toggle(name, on);
+      fitPill();
+    };
+
+    if (!dismissed){
+      if (reduceMotion){
+        setPill('is-open', true);
+      } else {
+        setTimeout(function(){ if (!dismissed) setPill('is-open', true); }, 3000);
+        setTimeout(function(){ if (!dismissed) pillIcon.classList.add('is-wobble'); }, 13000);
+        pillIcon.addEventListener('animationend', function(){ pillIcon.classList.remove('is-wobble'); });
+      }
+    }
+
+    // Expandida: ao sair, volta na hora ao texto anterior. Recolhida: recolhe cerca de 400 ms depois.
+    var enterPill = function(){
+      clearTimeout(pillLeaveTimer);
+      setPill('is-hover', true);
+    };
+    var leavePill = function(){
+      clearTimeout(pillLeaveTimer);
+      if (waPill.classList.contains('is-open')){
+        setPill('is-hover', false);
+      } else {
+        pillLeaveTimer = setTimeout(function(){ setPill('is-hover', false); }, 400);
+      }
+    };
+    waPill.addEventListener('mouseenter', enterPill);
+    waPill.addEventListener('mouseleave', leavePill);
+    pillLink.addEventListener('focus', enterPill);
+    pillLink.addEventListener('blur', leavePill);
+
+    document.getElementById('waPillClose').addEventListener('click', function(){
+      // Recolhe para o quadrado com o ícone
+      dismissed = true;
+      clearTimeout(pillLeaveTimer);
+      waPill.classList.remove('is-hover');
+      setPill('is-open', false);
+      try { sessionStorage.setItem('nortis-contact-collapsed', '1'); } catch (e) {}
+    });
+  } else if (bubble){
     var contactClose = document.getElementById('contactClose');
-    var dismissed = false;
-    try { dismissed = sessionStorage.getItem('nortis-contact-collapsed') === '1'; } catch (e) {}
 
     if (dismissed){
       bubble.classList.add('is-dismissed');
@@ -500,44 +559,8 @@
     contactClose.addEventListener('click', function(){
       // Fecha só o balão; o botão com o ícone continua
       bubble.classList.add('is-dismissed');
-      bubble.classList.remove('is-hover', 'is-grow');
       try { sessionStorage.setItem('nortis-contact-collapsed', '1'); } catch (e) {}
     });
-
-    // Só no computador: passar o mouse ou focar o botão mostra o balão com o texto de chamada.
-    // Ao sair, espera cerca de 400 ms e volta ao estado anterior (fechado ou com o texto normal).
-    var waButton = document.getElementById('whatsappFloat');
-    var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (waButton && finePointer){
-      var leaveTimer = null;
-      var enterBubble = function(){
-        clearTimeout(leaveTimer);
-        if (bubble.classList.contains('is-hover')) return;
-        // Se estava escondido (fechado ou ainda não apareceu), entra crescendo
-        var hiddenBefore = bubble.classList.contains('is-dismissed') || bubble.classList.contains('is-pending');
-        bubble.classList.add('is-hover');
-        if (hiddenBefore && !reduceMotion){
-          bubble.classList.remove('is-grow');
-          void bubble.offsetWidth;
-          bubble.classList.add('is-grow');
-        }
-      };
-      var leaveBubble = function(){
-        clearTimeout(leaveTimer);
-        leaveTimer = setTimeout(function(){
-          bubble.classList.remove('is-hover', 'is-grow');
-        }, 400);
-      };
-      [waButton, bubble].forEach(function(el){
-        el.addEventListener('mouseenter', enterBubble);
-        el.addEventListener('mouseleave', leaveBubble);
-      });
-      waButton.addEventListener('focus', enterBubble);
-      waButton.addEventListener('blur', leaveBubble);
-      bubble.addEventListener('animationend', function(e){
-        if (e.animationName === 'bubble-grow') bubble.classList.remove('is-grow');
-      });
-    }
   }
 
   // Aparecer ao rolar (versão leve). Sem JavaScript ou com movimento reduzido, tudo fica visível.

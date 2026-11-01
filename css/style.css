@@ -546,21 +546,46 @@ h3{font-size:1.1rem}
 }
 
 .tab-short{display:none}
-.contact-text-hover{display:none}
 .contact-bubble-wrap{transform-origin:100% 100%}
 .contact-bubble{transition:background-color var(--transition),padding .2s ease}
 
-/* Balão ao passar o mouse ou focar o botão do WhatsApp (só no computador) */
+/* Só no computador: botão e mensagem viram uma peça só, que se estica para a esquerda */
+.wa-pill{display:none}
 @media (hover:hover) and (pointer:fine){
-  .contact-bubble-wrap.is-hover{display:block;opacity:1;visibility:visible;transform:none}
-  .contact-bubble-wrap.is-hover .contact-text-normal{display:none}
-  .contact-bubble-wrap.is-hover .contact-text-hover{display:flex}
-  .contact-bubble-wrap.is-hover .contact-bubble{padding:17px 22px;max-width:320px}
-  .contact-bubble-wrap.is-hover .contact-text strong{font-size:1.06rem}
-  .contact-bubble-wrap.is-hover .contact-icon{width:30px;height:30px}
-  .contact-bubble-wrap.is-grow{animation:bubble-grow .2s ease both}
+  .contact-bubble-wrap,.whatsapp-float{display:none}
+  .wa-pill{
+    display:flex;align-items:center;height:56px;
+    background:var(--blue);color:var(--white);border-radius:var(--radius);
+    transition:background-color .3s ease;
+  }
+  .wa-pill.is-hover{background:var(--blue-hover)}
+  .wa-pill-link{display:flex;align-items:center;height:100%;color:inherit}
+  /* Anel de foco na peça inteira, só com o teclado */
+  .wa-pill-link:focus-visible{outline:none}
+  .wa-pill:has(.wa-pill-link:focus-visible){outline:2px solid var(--blue);outline-offset:3px}
+  .wa-pill-close{
+    flex:none;display:flex;align-items:center;justify-content:center;
+    width:0;height:32px;padding:0;margin-left:0;overflow:hidden;
+    background:transparent;color:var(--white);border:0;border-radius:var(--radius);cursor:pointer;
+    opacity:0;visibility:hidden;
+    transition:width .3s ease,margin .3s ease,opacity .3s ease,visibility .3s,background-color .25s ease;
+  }
+  .wa-pill.is-open .wa-pill-close{width:32px;margin-left:8px;opacity:1;visibility:visible}
+  .wa-pill-close:hover{background:rgba(255,255,255,.16)}
+  .wa-pill-close:focus-visible{outline:2px solid var(--white);outline-offset:-2px}
+  /* A largura em px vem do script, medida no texto ativo */
+  .wa-pill-text{position:relative;display:block;height:100%;width:0;overflow:hidden;opacity:0;transition:width .3s ease,opacity .3s ease}
+  .wa-pill.is-open .wa-pill-text,.wa-pill.is-hover .wa-pill-text{opacity:1}
+  .wa-pill-label{
+    position:absolute;top:0;right:0;height:100%;display:flex;align-items:center;
+    padding-left:20px;white-space:nowrap;font-size:.98rem;font-weight:500;transition:opacity .2s ease;
+  }
+  .wa-pill.is-open .wa-pill-label{padding-left:4px}
+  .wa-pill-label.is-hover,.wa-pill.is-hover .wa-pill-label.is-normal{opacity:0}
+  .wa-pill.is-hover .wa-pill-label.is-hover{opacity:1}
+  .wa-pill-icon{flex:none;width:56px;height:56px;display:flex;align-items:center;justify-content:center}
+  .wa-pill-icon.is-wobble svg{animation:wobble .7s ease}
 }
-@keyframes bubble-grow{from{scale:.95;opacity:0}to{scale:1;opacity:1}}
 
 /* Aparecer ao rolar (versão leve): a classe só é aplicada pelo script */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}

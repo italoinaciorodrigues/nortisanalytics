@@ -19,7 +19,6 @@
 <meta property="og:image:alt" content="Nortis Analytics: tecnologia que trabalha pelo seu negócio" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://www.nortisanalytics.com.br/assets/images/og-image.png" />
-<!-- ATIVAR: <meta name="google-site-verification" content="CODIGO"> -->
 <link rel="canonical" href="https://www.nortisanalytics.com.br/" />
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
@@ -100,9 +99,6 @@
 </script>
 <link rel="preload" href="assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css" />
-<!-- ATIVAR: Cloudflare Web Analytics (trocar SEU_TOKEN e remover o comentário)
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "SEU_TOKEN"}'></script>
--->
 </head>
 <body>
 
@@ -400,12 +396,6 @@
         <h2>Trabalho realizado</h2>
       </header>
       <p class="work-text" data-reveal>Site para uma casa de temporada. A proprietária queria receber reservas sem depender de plataforma que cobra comissão. Criamos um site próprio com fotos do espaço, informações da casa e botão direto para o WhatsApp.</p>
-      <!-- ATIVAR IMAGENS: quando as duas imagens reais do site entregue estiverem em assets/images/, remova este comentário.
-      <div class="work-images">
-        <img src="assets/images/trabalho-casa-desktop.jpg" alt="Site da casa de temporada visto no computador" width="1600" height="1000" loading="lazy" />
-        <img src="assets/images/trabalho-casa-celular.jpg" alt="Site da casa de temporada visto no celular" width="750" height="1500" loading="lazy" />
-      </div>
-      -->
     </div>
   </section>
 
@@ -413,10 +403,6 @@
   <section class="section sec-base" id="sobre" data-nav-group="sobre">
     <div class="container about-grid">
       <div class="about-visual" data-reveal>
-        <!-- ATIVAR FOTO: quando assets/images/italo.jpg (800x1000, 4:5, até 300 KB) estiver no projeto,
-             remova o comentário da linha abaixo e apague as duas <img> da ilustração.
-        <img src="assets/images/italo.jpg" alt="Ítalo, fundador da Nortis Analytics" width="800" height="1000" loading="lazy" class="about-photo" />
-        -->
         <img src="assets/images/about-illustration.svg" alt="Ilustração de uma pessoa trabalhando no computador ao lado de um balão de conversa" class="illus-light" loading="lazy" />
         <img src="assets/images/about-illustration-dark.svg" alt="" aria-hidden="true" class="illus-dark" loading="lazy" />
       </div>
@@ -503,7 +489,6 @@
     <a href="whatsapp.html" target="_blank" rel="noopener" class="contact-bubble" aria-label="Fale conosco pelo WhatsApp">
       <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.12 1.6 5.92L0 24l6.4-1.68a11.8 11.8 0 0 0 5.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.17-1.24-6.14-3.37-8.44ZM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.8 1 1.01-3.7-.22-.38a9.45 9.45 0 0 1-1.45-5.02c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.3 9.62Zm5.43-7.1c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.34Z"/></svg>
       <span class="contact-text contact-text-normal"><strong>Fale conosco</strong><span class="contact-sub">Clique aqui para conversar com a gente no WhatsApp.</span></span>
-      <span class="contact-text contact-text-hover"><strong>Converse conosco agora</strong><span class="contact-sub">Clique para abrir o WhatsApp.</span></span>
     </a>
     <button type="button" class="contact-close" id="contactClose" aria-label="Fechar mensagem">
       <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 2L10 10M10 2L2 10"/></svg>
@@ -512,6 +497,20 @@
   <a href="whatsapp.html" target="_blank" rel="noopener" class="whatsapp-float" id="whatsappFloat" aria-label="Conversar no WhatsApp">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.12 1.6 5.92L0 24l6.4-1.68a11.8 11.8 0 0 0 5.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.17-1.24-6.14-3.37-8.44ZM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.8 1 1.01-3.7-.22-.38a9.45 9.45 0 0 1-1.45-5.02c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.3 9.62Zm5.43-7.1c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.34Z"/></svg>
   </a>
+  <div class="wa-pill" id="waPill">
+    <button type="button" class="wa-pill-close" id="waPillClose" aria-label="Fechar mensagem">
+      <svg viewBox="0 0 12 12" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 2L10 10M10 2L2 10"/></svg>
+    </button>
+    <a href="whatsapp.html" target="_blank" rel="noopener" class="wa-pill-link" aria-label="Fale conosco pelo WhatsApp">
+      <span class="wa-pill-text" aria-hidden="true">
+        <span class="wa-pill-label is-normal">Fale conosco pelo WhatsApp</span>
+        <span class="wa-pill-label is-hover">Converse conosco agora</span>
+      </span>
+      <span class="wa-pill-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.12 1.6 5.92L0 24l6.4-1.68a11.8 11.8 0 0 0 5.64 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.17-1.24-6.14-3.37-8.44ZM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.8 1 1.01-3.7-.22-.38a9.45 9.45 0 0 1-1.45-5.02c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.3 9.62Zm5.43-7.1c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.63.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.34Z"/></svg>
+      </span>
+    </a>
+  </div>
 </div>
 
 <script src="js/script.js"></script>

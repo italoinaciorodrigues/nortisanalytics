@@ -22,9 +22,6 @@
   })();
 </script>
 <link rel="stylesheet" href="/css/style.css" />
-<!-- ATIVAR: Cloudflare Web Analytics (trocar SEU_TOKEN e remover o comentário)
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "SEU_TOKEN"}'></script>
--->
 </head>
 <body>
 
@@ -44,7 +41,7 @@
 </main>
 
 <script>
-  // O atraso dá tempo para a medição de visitas registrar a página
+  // Pequeno atraso antes de abrir o WhatsApp
   document.getElementById('waManual').hidden = false;
   setTimeout(function(){
     window.location.replace(document.getElementById('waLink').href);
